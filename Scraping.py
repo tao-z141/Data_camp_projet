@@ -66,7 +66,7 @@ while current_page <= pages:
 driver.quit()
 
 
-csv_file_name = "Article1_data.csv"
+csv_file_name = "Bronze/Article1_data.csv"
 csv_columns = ['Auteur', 'Date', 'Commentaire', 'Note']
 
 try:
