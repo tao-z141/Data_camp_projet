@@ -3,12 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="Visualisation des Données et Graphiques", layout="wide")
+st.set_page_config(page_title="Visualisation des Données et Graphiques sur le produit des chausseurs running sur le site Decathlon ", layout="wide")
 
 st.title("Visualisation des Données et Graphiques")
 st.markdown("""
     Cette application permet de visualiser les données et différents graphiques à partir de fichiers CSV. 
-    Veuillez charger un fichier CSV contenant les colonnes appropriées pour générer les visualisations.
+    Veuillez charger un fichier CSV pour générer les visualisations.
 """)
 
 uploaded_file = st.file_uploader("Chargez votre fichier CSV (ex: prediction.csv)", type=["csv"])
