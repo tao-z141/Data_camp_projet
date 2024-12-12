@@ -102,21 +102,12 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
 ### Utilisation d'un fichier Jupyter Notebook
 Tous ces scripts sont regroupés dans le fichier `Projet.ipynb`, que vous pouvez utiliser pour une meilleure lisibilité et un suivi d'exécution clair.
 
-### Visualisation avec Streamlit
-1. Activez l'environnement Streamlit :
-   ```bash
-   conda activate vesu
-   ```
-2. Lancez l'application Streamlit :
-   ```bash
-   python streamlit.py
-   streamlit run streamlit.py
-   ```
-  
-
 ## Déploiement de l'application sur Streamlit Cloud
 1. **Fichier principal** : `streamlit.py` (contient le code de l'application).
- Vous pouvez lancer le code en lancant cette 
+ Vous pouvez lancer l'application en executant cette commande sur votre terminal : 
+   ```bash
+   streamlit run streamlit.py
+   ```
 
 ### URL de l'application
 
