@@ -43,7 +43,8 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
 
 
 
-- **Streamlit** est utilisé pour afficher les résultats sous forme de graphiques interactifs.
+#### Streamlit 
+Utilisé pour afficher les résultats sous forme de graphiques interactifs.
 - Installez Streamlit avec :
   ```bash
   pip install streamlit
