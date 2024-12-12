@@ -116,7 +116,7 @@ Tous ces scripts sont regroupés dans le fichier `Projet.ipynb`, que vous pouvez
 
 ## Déploiement de l'application sur Streamlit Cloud
 1. **Fichier principal** : `streamlit.py` (contient le code de l'application).
-2. **Fichier de configuration** : `requirements.txt` (liste des bibliothèques nécessaires).
+ Vous pouvez lancer le code en lancant cette 
 
 ### URL de l'application
 
