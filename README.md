@@ -64,12 +64,12 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
       (Génère ` Article_data.csv`)
    2. **Normalisation des avis** :
       ```bash
-      python normalisation.py
+      python Prétraitement.ipynb
       ```
       (Génère ` data_pretraité.csv`)
    3. **Classification des avis** :
       ```bash
-      python model_classification.py
+      python classification.ipynb
       ```
       (Génère ` prediction.csv`, utilisé pour la visualisation)
 
