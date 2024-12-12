@@ -37,7 +37,32 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
      ```
 
 #### Prétraitement et classification
-
+1. **Installer unidecode** :
+   - Depuis Google Colab :
+     ```python
+     pip install unidecode
+      ```
+2. **Installer optimum** :
+   - Depuis Google Colab :
+     ```python
+     pip install optimum
+      ```
+3. **Installer onnxruntime** :
+- Depuis Google Colab :
+     ```python
+     pip install onnxruntime
+      ```
+4. **Installer  optimum onnxruntime onnx** :
+   - Depuis Google Colab :
+     ```python
+     pip install  optimum onnxruntime onnx
+      ```
+    
+5. **Installer  cupy-cuda11x** :
+   - Depuis Google Colab :
+     ```python
+      !pip install cupy-cuda11x
+      ```
 
 #### Visualisation
 
