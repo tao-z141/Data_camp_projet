@@ -13,7 +13,10 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
 ### Outils requis
 - **Python** (version 3.7 ou supérieure) ou **Anaconda** (pour exécuter le code dans JupyterLab ou directement avec Python).
 
-### Installation des bibliothèques
+### Installation des dépendances
+
+pip install -r requirements.txt
+
 #### Scraping
 1. **Installer BeautifulSoup** :
    - Depuis l'Anaconda Prompt :
