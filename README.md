@@ -5,7 +5,7 @@ Ce projet permet de :
 2. Normaliser, classifier et visualiser ces avis.
 3. Déployer une application interactive pour les visualisations avec Streamlit.
 
-Le projet repose sur plusieurs bibliothèques Python : **BeautifulSoup**, **Selenium**, **Streamlit**, **Pandas**, **Seaborn**, et **Matplotlib**.
+Le projet repose sur plusieurs bibliothèques Python : **BeautifulSoup**, **Selenium**, **Streamlit**,**re**,**unidecode**,**optimum.onnxruntime** ,**transformers**,**Pandas**, **Seaborn**, et **Matplotlib**.
 
 ## Prérequis
 Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques nécessaires sur votre machine :
