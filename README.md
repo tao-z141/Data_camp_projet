@@ -117,15 +117,9 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
       streamlit run dashboard.py 
       ```
 
-## Déploiement de l'application sur Streamlit Cloud
-1. **Fichier principal** : `dashboard.py` (contient le code de l'application).
- Vous pouvez lancer l'application en executant cette commande sur votre terminal : 
-   ```bash
-   streamlit run dashboard.py
-   ```
-
-### URL de l'application
-
+## Déploiement de l'application sur Streamlit Cloud 
+ URL de l'application obtenu en deploiant le dashboard.py 
+   https://dashboardpy-5y7o4yd39lmw56iacqwkn6.streamlit.app/
 
 
 
