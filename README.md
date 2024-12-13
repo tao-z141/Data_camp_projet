@@ -45,39 +45,39 @@ Pour installer les dépendances et les bibliothèques nécessaires, vous avez le
    - Depuis un Google collab:
      ```python
      pip install unidecode
-      ```
+     ```
 2. **Installer optimum** :
    - Depuis un Google collab :
      ```python
-      pip install optimum
-      ```
+     pip install optimum
+     ```
 3. **Installer onnxruntime** :
 - Depuis un Google collab :
      ```python
-      pip install onnxruntime
-      ```
+     pip install onnxruntime
+     ```
 4. **Installer  optimum onnxruntime onnx** :
    - Depuis un Google collab :
      ```python
-       pip install  optimum onnxruntime onnx
-      ```
+     pip install  optimum onnxruntime onnx
+     ```
     
 5. **Installer  cupy-cuda11x** :
    - Depuis un Google collab :
      ```python
-      pip install cupy-cuda11x
-      ```
+     pip install cupy-cuda11x
+     ```
 
 
 #### Visualisation
 1. **Installer pandas** :
      ```python
      pip install pandas
-      ```
+     ```
 2. **Installer plotly** :
      ```python
      pip install plotly
-      ```
+     ```
 
 
 #### Streamlit 
@@ -113,7 +113,7 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
    4. **Streamlit** :
       Pour exécuter Streamlit, assurez-vous que l'image Decathlon ainsi que le fichier prediction.csv se trouvent dans le même répertoire que votre fichier dashboard.py, puis exécutez la commande suivante :
   ```bash
-      streamlit run dashboard.py 
+  streamlit run dashboard.py 
   ```
 
 ## Déploiement de l'application sur Streamlit Cloud 
