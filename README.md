@@ -14,9 +14,10 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
 - **Python** ou **Anaconda** (pour exécuter le code dans JupyterLab ou directement avec Python).
 
 ### Installation des dépendances
-
-pip install -r requirements.txt
-
+Pour installer les dependances et les bibliotheque necessaire , vous avez le choix d'executer le fichier requirement ou d'installer chaque bibliotheque independament : 
+     ```bash
+     pip install -r requirements.txt
+     ```
 #### Scraping
 1. **Installer BeautifulSoup** :
    - Depuis l'Anaconda Prompt :
@@ -101,9 +102,12 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
       python classification.ipynb
       ```
       (Génère ` prediction.csv`, utilisé pour la visualisation)
+   4. **Streamlit** :
+      pour executer le streamlit assurez vous d'avoir l'image Decathlon dans le meme repertoire que votre fichier streamlit.py, puis executer la commande suivante : 
+  ```bash
+      streamlit run  streamlit.py 
+      ```
 
-### Utilisation d'un fichier Jupyter Notebook
-Tous ces scripts sont regroupés dans le fichier `Projet.ipynb`, que vous pouvez utiliser pour une meilleure lisibilité et un suivi d'exécution clair.
 
 ## Déploiement de l'application sur Streamlit Cloud
 1. **Fichier principal** : `streamlit.py` (contient le code de l'application).
