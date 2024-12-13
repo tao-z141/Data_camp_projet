@@ -120,5 +120,5 @@ with row3_col2:
 
 st.markdown("""
 ### Conclusion
-Le dashboard montre que cet article est largement apprécié, mais des efforts spécifiques peuvent être faits pour réduire les retours négatifs et maximiser son potentiel commercial, notamment en adaptant le produit ou en ciblant les promotions aux périodes d'intérêt. En suivant ces recommandations.
+Le dashboard montre que cet article est largement apprécié, mais des efforts spécifiques peuvent être faits pour réduire les retours négatifs et maximiser son potentiel commercial, notamment en adaptant le produit ou en ciblant les promotions aux périodes d'intérêt.
 """)
