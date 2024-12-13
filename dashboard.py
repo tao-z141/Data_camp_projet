@@ -12,6 +12,12 @@ data = pd.read_csv(file_path, encoding='latin1', sep=';')
 data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y', errors='coerce')
 data['Month'] = data['Date'].dt.month
 
+# Liste des mois pour affichage
+month_labels = {
+    1: "Janvier", 2: "Février", 3: "Mars", 4: "Avril", 5: "Mai", 6: "Juin",
+    7: "Juillet", 8: "Août", 9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre"
+}
+
 # Afficher le logo Decathlon dans la barre latérale
 st.sidebar.image("image.png", width=200)
 
@@ -58,57 +64,51 @@ filtered_data = data[
 ]
 
 # Organisation des visualisations dans une grille
-row1_col1, row1_col2 = st.columns([1, 1])
+row1_col1 = st.container()  # Une seule colonne pour Visualisation 1
 row2_col1, row2_col2 = st.columns([1, 1])
 row3_col1, row3_col2 = st.columns([1, 1])
 
 # Visualisation 1 : Distribution des sentiments
 with row1_col1:
     sentiment_count = filtered_data['Sentiment'].value_counts().reset_index()
-    sentiment_count.columns = ['Sentiment', 'Count']  # Renommer les colonnes pour plus de clarté
+    sentiment_count.columns = ['Sentiment', 'Count']
     fig1 = px.bar(sentiment_count, x='Sentiment', y='Count', labels={'Sentiment': 'Sentiment', 'Count': 'Nombre'},
-                  title="Distribution des Sentiments", text='Count')
+                  title="Distribution des Sentiments", text='Count', height=400, width=900)
     fig1.update_traces(texttemplate='%{text}', textposition='outside')
-    fig1.update_layout(xaxis_title="Sentiment", yaxis_title="Nombre", title_x=0.5)
+    fig1.update_layout(xaxis_title="Sentiment", yaxis_title="Nombre", title={'text': "Distribution des Sentiments", 'font': {'size': 16}})
     st.plotly_chart(fig1, use_container_width=True)
 
-# Visualisation 2 : Répartition des notes (Histogramme horizontal)
-with row1_col2:
-    note_count = filtered_data['Note'].value_counts().reset_index()
-    note_count.columns = ['Note', 'Count']  # Renommer les colonnes pour plus de clarté
-    fig2 = px.bar(note_count, y='Note', x='Count', orientation='h',
-                  labels={'Note': 'Note', 'Count': 'Nombre'},
-                  title="Répartition des Notes", text='Count')
-    fig2.update_traces(texttemplate='%{text}', textposition='outside')
-    fig2.update_layout(xaxis_title="Nombre", yaxis_title="Note", title_x=0.5)
-    st.plotly_chart(fig2, use_container_width=True)
+# Visualisation 2 supprimée
 
 # Visualisation 3 : Évolution des commentaires par mois
 with row2_col1:
     comments_per_month = filtered_data.groupby('Month').size().reset_index(name='Count')
-    fig3 = px.line(comments_per_month, x='Month', y='Count', markers=True, labels={'Month': 'Mois', 'Count': 'Nombre'},
-                   title="Évolution des Commentaires")
-    fig3.update_layout(xaxis_title="Mois", yaxis_title="Nombre de Commentaires", title_x=0.5)
+    comments_per_month['Month Name'] = comments_per_month['Month'].map(month_labels)
+    fig3 = px.line(comments_per_month, x='Month Name', y='Count', markers=True,
+                   labels={'Month Name': 'Mois', 'Count': 'Nombre'},
+                   title="Évolution des Commentaires", height=400, width=700)
+    fig3.update_layout(xaxis_title="Mois", yaxis_title="Nombre de Commentaires", title={'text': "Évolution des Commentaires", 'font': {'size': 16}})
     st.plotly_chart(fig3, use_container_width=True)
 
 # Visualisation 4 : Corrélation entre la note et le score
 with row2_col2:
     fig4 = px.scatter(filtered_data, x='Note', y='score', color='Sentiment',
                       labels={'Note': 'Note', 'score': 'Score', 'Sentiment': 'Sentiment'},
-                      title="Corrélation entre Note et Score")
-    fig4.update_layout(xaxis_title="Note", yaxis_title="Score", title_x=0.5)
+                      title="Corrélation entre Note et Score", height=400, width=700)
+    fig4.update_layout(xaxis_title="Note", yaxis_title="Score", title={'text': "Corrélation entre Note et Score", 'font': {'size': 16}})
     st.plotly_chart(fig4, use_container_width=True)
 
-# Visualisation 5 : Comparaison entre notes et prédictions
+# Visualisation 5 : Comparaison entre notes et prédictions (avec pas de 1)
 with row3_col1:
     comparison = filtered_data[['Note', 'prediction']].melt(var_name='Type', value_name='Valeur')
     fig5 = px.histogram(comparison, x='Valeur', color='Type', barmode='group',
                         labels={'Valeur': 'Valeur (Note ou Prédiction)', 'Type': 'Type'},
-                        title="Comparaison entre Notes et Prédictions")
-    fig5.update_layout(xaxis_title="Valeur (Note ou Prédiction)", yaxis_title="Fréquence", title_x=0.5)
+                        title="Comparaison entre Notes et Prédictions", text_auto=True, height=400, width=700)
+    fig5.update_xaxes(tickmode='linear', dtick=1)
+    fig5.update_layout(xaxis_title="Valeur (Note ou Prédiction)", yaxis_title="Fréquence", title={'text': "Comparaison entre Notes et Prédictions", 'font': {'size': 16}})
     st.plotly_chart(fig5, use_container_width=True)
 
-# Visualisation 6 : Matrice de confusion entre notes et prédictions
+# Visualisation 6 : Matrice de confusion (avec pas de 1)
 with row3_col2:
     confusion_matrix = pd.crosstab(filtered_data['Note'], filtered_data['prediction'], rownames=['Note'], colnames=['Prédiction'])
     fig6 = go.Figure(data=go.Heatmap(
@@ -119,5 +119,7 @@ with row3_col2:
         text=confusion_matrix.values,
         texttemplate="%{text}"
     ))
-    fig6.update_layout(title="Matrice de Confusion", xaxis_title="Prédiction", yaxis_title="Note", title_x=0.5)
+    fig6.update_xaxes(tickmode='linear', dtick=1)
+    fig6.update_yaxes(tickmode='linear', dtick=1)
+    fig6.update_layout(title={'text': "Matrice de Confusion", 'font': {'size': 16}}, xaxis_title="Prédiction", yaxis_title="Note", height=400, width=700)
     st.plotly_chart(fig6, use_container_width=True)
