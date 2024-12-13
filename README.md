@@ -11,7 +11,8 @@ Le projet repose sur plusieurs bibliothèques Python : **BeautifulSoup**, **Sele
 Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques nécessaires sur votre machine :
 
 ### Outils requis
-- **Python** ou **Anaconda** (pour exécuter le code dans JupyterLab ou directement avec Python).
+- pour le scrapping et la partie streamlit ( dashboard ) utilisez **Python** ou **Anaconda** (pour exécuter le code dans JupyterLab ou directement avec Python)
+- pour le pretraitment et la classification utilisez **google collab**
 
 ### Installation des dépendances
 Pour installer les dependances et les bibliotheque necessaire , vous avez le choix d'executer le fichier requirement ou d'installer chaque bibliotheque independament : 
@@ -42,34 +43,42 @@ Pour installer les dependances et les bibliotheque necessaire , vous avez le cho
 
 #### Prétraitement et classification
 1. **Installer unidecode** :
-   - Depuis un notebook Jupyter :
+   - Depuis un Google collab:
      ```python
-     !pip install unidecode
+     pip install unidecode
       ```
 2. **Installer optimum** :
-   - Depuis un notebook Jupyter :
+   - Depuis un Google collab :
      ```python
-     !pip install optimum
+      pip install optimum
       ```
 3. **Installer onnxruntime** :
-- Depuis un notebook Jupyter :
+- Depuis un Google collab :
      ```python
-     !pip install onnxruntime
+      pip install onnxruntime
       ```
 4. **Installer  optimum onnxruntime onnx** :
-   - Depuis un notebook Jupyter :
+   - Depuis un Google collab :
      ```python
-     !pip install  optimum onnxruntime onnx
+       pip install  optimum onnxruntime onnx
       ```
     
 5. **Installer  cupy-cuda11x** :
-   - Depuis un notebook Jupyter :
+   - Depuis un Google collab :
      ```python
-      !pip install cupy-cuda11x
+      pip install cupy-cuda11x
       ```
 
-#### Visualisation
 
+#### Visualisation
+1. **Installer pandas** :
+     ```python
+     pip install pandas
+      ```
+2. **Installer plotly** :
+     ```python
+     pip install plotly
+      ```
 
 
 #### Streamlit 
@@ -103,11 +112,10 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
       ```
       (Génère ` prediction.csv`, utilisé pour la visualisation)
    4. **Streamlit** :
-      pour executer le streamlit assurez vous d'avoir l'image Decathlon dans le meme repertoire que votre fichier streamlit.py, puis executer la commande suivante : 
+      Pour exécuter Streamlit, assurez-vous que l'image Decathlon ainsi que le fichier prediction.csv se trouvent dans le même répertoire que votre fichier streamlit.py, puis exécutez la commande suivante :
   ```bash
       streamlit run  streamlit.py 
       ```
-
 
 ## Déploiement de l'application sur Streamlit Cloud
 1. **Fichier principal** : `streamlit.py` (contient le code de l'application).
