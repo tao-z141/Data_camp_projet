@@ -115,7 +115,7 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
       Pour exécuter Streamlit, assurez-vous que l'image Decathlon ainsi que le fichier prediction.csv se trouvent dans le même répertoire que votre fichier dashboard.py, puis exécutez la commande suivante :
   ```bash
       streamlit run dashboard.py 
-      ```
+  ```
 
 ## Déploiement de l'application sur Streamlit Cloud 
  URL de l'application obtenu en deploiant le dashboard.py 
