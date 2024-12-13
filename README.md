@@ -15,10 +15,9 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
 - pour le pretraitment et la classification utilisez **google collab**
 
 ### Installation des dépendances
-Pour installer les dependances et les bibliotheque necessaire , vous avez le choix d'executer le fichier requirement ou d'installer chaque bibliotheque independament : 
-     ```bash
+Pour installer les dépendances et les bibliothèques nécessaires, vous avez le choix entre exécuter le fichier requirements.txt ou installer chaque bibliothèque indépendamment :     ```bash
      pip install -r requirements.txt
-     ```
+```
 #### Scraping
 1. **Installer BeautifulSoup** :
    - Depuis l'Anaconda Prompt :
@@ -118,7 +117,7 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
   ```
 
 ## Déploiement de l'application sur Streamlit Cloud 
- URL de l'application obtenu en deploiant le dashboard.py 
+ URL de l'application obtenu en deployant le dashboard.py 
    https://dashboardpy-5y7o4yd39lmw56iacqwkn6.streamlit.app/
 
 
