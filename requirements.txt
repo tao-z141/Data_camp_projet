@@ -1,0 +1,14 @@
+optimum
+onnxruntime
+onnx
+pandas
+numpy
+cupy-cuda11x
+selenium
+beautifulsoup4
+streamlit
+plotly
+transformers
+unidecode
+scikit-learn
+matplotlib
