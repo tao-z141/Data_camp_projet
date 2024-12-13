@@ -4,11 +4,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 
-# Charger les données depuis le fichier CSV
-file_path = 'prediction.csv'
+file_path = 'Silver/prediction.csv'
 data = pd.read_csv(file_path, encoding='latin1', sep=';')
 
-# Convertir la colonne 'Date' en format datetime et extraire le mois
 data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y', errors='coerce')
 data['Month'] = data['Date'].dt.month
 
@@ -18,13 +16,8 @@ month_labels = {
     7: "Juillet", 8: "Août", 9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre"
 }
 
-# Afficher le logo Decathlon dans la barre latérale
-st.sidebar.image("Decathlon.png", width=200)
-
-# Titre principal de l'application
+st.sidebar.image("img/Decathlon.png", width=200)
 st.markdown("<h1 style='text-align: center;'>Analyse des Avis sur une Chaussure de Running sur Decathlon</h1>", unsafe_allow_html=True)
-
-# Ajout des filtres dans la barre latérale
 st.sidebar.header("Filtres")
 
 # Filtre par sentiment
@@ -54,7 +47,6 @@ min_note, max_note = st.sidebar.slider(
     value=(int(data['Note'].min()), int(data['Note'].max()))
 )
 
-# Appliquer les filtres aux données
 filtered_data = data[
     (data['Sentiment'].isin(sentiments)) &
     (data['Month'] >= start_month) &
@@ -63,8 +55,7 @@ filtered_data = data[
     (data['Note'] <= max_note)
 ]
 
-# Organisation des visualisations
-row1_col1 = st.container()  # Conteneur unique pour la première visualisation
+row1_col1 = st.container()  
 row2_col1, row2_col2 = st.columns([1, 1])
 row3_col1, row3_col2 = st.columns([1, 1])
 
@@ -127,8 +118,7 @@ with row3_col2:
     st.plotly_chart(fig6, use_container_width=True)
     st.markdown("**Interprétation :** La comparaison entre les notes et les prédictions montre que les clients sont très nombreux à attribuer des notes élevées (4 et 5). Cependant, les avis négatifs, bien que rares, méritent une attention particulière. Les commentaires associés aux notes faibles doivent être analysés pour mieux comprendre les causes de l'insatisfaction et y apporter des solutions rapides, comme des ajustements sur l'article ou un meilleur accompagnement client.")
 
-# Conclusion générale
 st.markdown("""
 ### Conclusion
-Le dashboard montre que cet article est largement apprécié, mais des efforts spécifiques peuvent être faits pour réduire les retours négatifs et maximiser son potentiel commercial, notamment en adaptant le produit ou en ciblant les promotions aux périodes d'intérêt. En suivant ces recommandations, le manager pourra augmenter les ventes et fidéliser davantage les clients pour cet article.
+Le dashboard montre que cet article est largement apprécié, mais des efforts spécifiques peuvent être faits pour réduire les retours négatifs et maximiser son potentiel commercial, notamment en adaptant le produit ou en ciblant les promotions aux périodes d'intérêt. En suivant ces recommandations.
 """)
