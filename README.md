@@ -112,16 +112,16 @@ Utilisé pour afficher les résultats sous forme de graphiques interactifs.
       ```
       (Génère ` prediction.csv`, utilisé pour la visualisation)
    4. **Streamlit** :
-      Pour exécuter Streamlit, assurez-vous que l'image Decathlon ainsi que le fichier prediction.csv se trouvent dans le même répertoire que votre fichier streamlit.py, puis exécutez la commande suivante :
+      Pour exécuter Streamlit, assurez-vous que l'image Decathlon ainsi que le fichier prediction.csv se trouvent dans le même répertoire que votre fichier dashboard.py, puis exécutez la commande suivante :
   ```bash
-      streamlit run  streamlit.py 
+      streamlit run dashboard.py 
       ```
 
 ## Déploiement de l'application sur Streamlit Cloud
-1. **Fichier principal** : `streamlit.py` (contient le code de l'application).
+1. **Fichier principal** : `dashboard.py` (contient le code de l'application).
  Vous pouvez lancer l'application en executant cette commande sur votre terminal : 
    ```bash
-   streamlit run streamli  t.py
+   streamlit run dashboard.py
    ```
 
 ### URL de l'application
