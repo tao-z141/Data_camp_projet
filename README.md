@@ -11,7 +11,7 @@ Le projet repose sur plusieurs bibliothèques Python : **BeautifulSoup**, **Sele
 Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques nécessaires sur votre machine :
 
 ### Outils requis
-- **Python** (version 3.7 ou supérieure) ou **Anaconda** (pour exécuter le code dans JupyterLab ou directement avec Python).
+- **Python** ou **Anaconda** (pour exécuter le code dans JupyterLab ou directement avec Python).
 
 ### Installation des dépendances
 
@@ -41,28 +41,28 @@ pip install -r requirements.txt
 
 #### Prétraitement et classification
 1. **Installer unidecode** :
-   - Depuis Google Colab :
+   - Depuis un notebook Jupyter :
      ```python
-     pip install unidecode
+     !pip install unidecode
       ```
 2. **Installer optimum** :
-   - Depuis Google Colab :
+   - Depuis un notebook Jupyter :
      ```python
-     pip install optimum
+     !pip install optimum
       ```
 3. **Installer onnxruntime** :
-- Depuis Google Colab :
+- Depuis un notebook Jupyter :
      ```python
-     pip install onnxruntime
+     !pip install onnxruntime
       ```
 4. **Installer  optimum onnxruntime onnx** :
-   - Depuis Google Colab :
+   - Depuis un notebook Jupyter :
      ```python
-     pip install  optimum onnxruntime onnx
+     !pip install  optimum onnxruntime onnx
       ```
     
 5. **Installer  cupy-cuda11x** :
-   - Depuis Google Colab :
+   - Depuis un notebook Jupyter :
      ```python
       !pip install cupy-cuda11x
       ```
@@ -109,7 +109,7 @@ Tous ces scripts sont regroupés dans le fichier `Projet.ipynb`, que vous pouvez
 1. **Fichier principal** : `streamlit.py` (contient le code de l'application).
  Vous pouvez lancer l'application en executant cette commande sur votre terminal : 
    ```bash
-   streamlit run streamlit.py
+   streamlit run streamli  t.py
    ```
 
 ### URL de l'application
