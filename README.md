@@ -15,9 +15,9 @@ Avant de commencer, assurez-vous d'avoir installé les outils et bibliothèques 
 - pour le pretraitment et la classification utilisez **google collab**
 
 ### Installation des dépendances
-Pour installer les dépendances et les bibliothèques nécessaires, vous avez le choix entre exécuter le fichier requirements.txt ou installer chaque bibliothèque indépendamment :     ```bash
+Pour installer les dépendances et les bibliothèques nécessaires, vous avez le choix entre exécuter le fichier requirements.txt ou installer chaque bibliothèque indépendamment :               ```bash
      pip install -r requirements.txt
-```
+     ```
 #### Scraping
 1. **Installer BeautifulSoup** :
    - Depuis l'Anaconda Prompt :
